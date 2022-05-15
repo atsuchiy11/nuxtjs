@@ -1,2 +1,2 @@
 # nuxtjs
-test
+init
