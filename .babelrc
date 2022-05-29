@@ -1,0 +1,12 @@
+// Node.js環境でimport/exportを使う
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+  ]
+}
