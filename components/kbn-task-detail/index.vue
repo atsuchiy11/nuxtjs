@@ -17,6 +17,7 @@
         </v-card-title>
         <v-card-text>
           <v-text-field
+            data-testid="input-task-name"
             ref="label"
             label="タスク名"
             outlined
@@ -24,7 +25,7 @@
             :v-model="name"
             :rules="nameRules"
           ></v-text-field>
-          <v-textarea label="説明" outlined :v-model="description"></v-textarea>
+          <v-textarea data-testid="input-description" label="説明" outlined :v-model="description"></v-textarea>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -36,27 +37,27 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import { Emit } from 'vue-property-decorator'
+import { Vue, Component, Prop } from "nuxt-property-decorator";
+import { Emit } from "vue-property-decorator";
 
 @Component
 export default class KbnTaskDetail extends Vue {
   @Prop()
-  title: string
+  title: string;
 
-  @Emit('click:cancel')
+  @Emit("click:cancel")
   onCancel() {
-    return
+    return;
   }
 
-  valid: boolean = false
-  name: string | null = null
-  description: string | null = null
-  nameRules = [(v) => !!v || 'タスク名は必須です']
+  valid: boolean = false;
+  name: string | null = null;
+  description: string | null = null;
+  nameRules = [(v) => !!v || "タスク名は必須です"];
 
   // TODO
   onUpdate() {
-    alert('onUpdate')
+    alert("onUpdate");
   }
 }
 </script>

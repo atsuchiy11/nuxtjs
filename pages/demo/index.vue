@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
-import DemoTopPage from '~/components/demo-top-page/index.vue'
+import { Vue, Component } from "nuxt-property-decorator";
+import DemoTopPage from "~/components/demo-top-page/index.vue";
 
 @Component({
   components: { DemoTopPage },

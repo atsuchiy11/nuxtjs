@@ -11,10 +11,10 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
-import NuxtLogo from '~/components/logo-nuxt/index.vue'
-import VuetifyLogo from '~/components/logo-vuetify/index.vue'
-import DemoPageCard from '~/components/demo-card/index.vue'
+import { Vue, Component } from "nuxt-property-decorator";
+import NuxtLogo from "~/components/logo-nuxt/index.vue";
+import VuetifyLogo from "~/components/logo-vuetify/index.vue";
+import DemoPageCard from "~/components/demo-card/index.vue";
 
 @Component({
   components: {

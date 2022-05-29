@@ -2,6 +2,9 @@
   "name": "nuxt-test",
   "version": "1.0.0",
   "private": true,
+  "browserslist": [
+    "last 2 version"
+  ],
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -13,14 +16,15 @@
     "lintfix": "prettier --write --list-different . && yarn lint:js --fix",
     "test": "jest",
     "storybook": "start-storybook -p 6006 -s public",
-    "doc:gen": "rm -rf website && npx vuese gen",
-    "doc:serve": "vuese serve --open",
-    "doc": "npm run doc:gen && npm run doc:serve",
-    "preview": "vuese preview"
+    "mock": "forever start -c 'ts-node -r tsconfig-paths/register' test/mock/api/entry.ts && yarn mock:list",
+    "mock:list": "forever list",
+    "mock:stop": "forever stopall",
+    "mock:restart": "yarn mock:stop && yarn mock"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "array-move": "^4.0.0",
+    "axios": "^0.27.2",
     "core-js": "^3.19.3",
     "eslint-config-typescript": "^3.0.0",
     "nuxt": "^2.15.8",
@@ -36,12 +40,19 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/register": "^7.17.7",
     "@nuxt/types": "^2.15.8",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/vuetify": "^1.12.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/user-event": "13.5.0",
+    "@testing-library/vue": "^5.8.3",
     "@types/jest": "^27.5.0",
+    "@types/restify": "^8.5.4",
     "@vue/test-utils": "^1.3.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.4.4",
@@ -53,8 +64,11 @@
     "eslint-plugin-vue": "^8.7.1",
     "jest": "^27.4.4",
     "prettier": "^2.5.1",
+    "restify": "^8.6.1",
+    "restify-cors-middleware": "^1.1.1",
     "ts-jest": "^27.1.1",
     "ts-node": "^10.7.0",
+    "tsconfig-paths": "^4.0.0",
     "vue-eslint-parser": "^8.3.0",
     "vue-jest": "^3.0.4"
   }

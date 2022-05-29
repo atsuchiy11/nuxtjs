@@ -11,12 +11,12 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from 'nuxt-property-decorator'
-import { Task } from '~/services/api'
+import { Vue, Component, Prop } from "nuxt-property-decorator";
+import { Task } from "~/services/interface";
 
 @Component
 export default class KbnTaskCard extends Vue {
   @Prop()
-  task: Task
+  task: Task;
 }
 </script>
